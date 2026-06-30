@@ -16,32 +16,26 @@ export default function Home() {
         {/* Hero displays instantly on mount */}
         <Hero />
 
-        <hr className="section-divider" />
         <AnimatedSection>
           <Education />
         </AnimatedSection>
 
-        <hr className="section-divider" />
         <AnimatedSection>
           <Skills />
         </AnimatedSection>
 
-        <hr className="section-divider" />
         <AnimatedSection>
           <Experience />
         </AnimatedSection>
 
-        <hr className="section-divider" />
         <AnimatedSection>
           <Projects />
         </AnimatedSection>
 
-        <hr className="section-divider" />
         <AnimatedSection>
           <GitHubActivity />
         </AnimatedSection>
 
-        <hr className="section-divider" />
         <AnimatedSection>
           <Blogs />
         </AnimatedSection>
