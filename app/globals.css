@@ -176,9 +176,9 @@ body {
 
 /* Main content */
 .main-content {
-  max-width: 780px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 5rem 1.5rem 4rem;
+  padding: 2rem 2rem 4rem;
 }
 
 /* Section */
@@ -199,9 +199,16 @@ body {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2.5rem;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 3.5rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
+}
+
+.hero-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }
 
 .hero-avatar {
@@ -294,6 +301,19 @@ body {
   color: var(--text-primary);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
+}
+
+/* Copy email button success state */
+.copy-btn.copied {
+  border-color: #22c55e;
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+[data-theme="dark"] .copy-btn.copied {
+  background: #14532d;
+  color: #86efac;
+  border-color: #22c55e;
 }
 
 .blog-link-btn {
@@ -425,9 +445,22 @@ body {
   box-shadow: var(--shadow);
 }
 
-.skill-icon {
+/* Skill icon — real SVG img from Simple Icons CDN */
+.skill-icon-img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
   font-size: 1rem;
+  /* for emoji fallback */
   line-height: 1;
+}
+
+/* Invert Next.js icon in dark mode (it's black by default) */
+[data-theme="dark"] .skill-badge img[alt="Next.js"],
+[data-theme="dark"] .skill-badge img[alt="Express.js"] {
+  filter: invert(1);
 }
 
 /* Experience timeline */
@@ -571,7 +604,7 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 2rem 2.5rem;
+  padding: 5rem 2.5rem;
   text-align: center;
   max-width: 420px;
   box-shadow: var(--shadow-md);
@@ -597,12 +630,11 @@ body {
   margin-top: 0.75rem;
 }
 
-/* Projects real cards (below the unavailable section) */
+/* Projects real cards */
 .project-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: 0.85rem;
 }
 
 .project-card {
@@ -620,10 +652,29 @@ body {
   box-shadow: var(--shadow-md);
 }
 
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.15rem;
+}
+
 .project-card-name {
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--text-primary);
+}
+
+.project-card-year {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: var(--skill-bg);
+  border: 1px solid var(--skill-border);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
 }
 
 .project-card-desc {
@@ -653,6 +704,7 @@ body {
   display: flex;
   gap: 0.75rem;
   margin-top: 0.85rem;
+  align-items: center;
 }
 
 .project-link {
@@ -668,6 +720,27 @@ body {
 .project-link:hover {
   color: var(--accent-hover);
   text-decoration: underline;
+}
+
+/* Live demo link gets a subtle highlight */
+.project-link-live {
+  background: var(--skill-bg);
+  border: 1px solid var(--skill-border);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+.project-link-live:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.project-coming-soon {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 /* GitHub Activity */

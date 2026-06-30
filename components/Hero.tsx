@@ -1,25 +1,39 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import {
   FaGithub,
   FaLinkedin,
   FaTwitter,
   FaEnvelope,
-  FaCopy
+  FaCheck,
 } from "react-icons/fa";
+import { IoCopyOutline } from "react-icons/io5";
 import { MdLocationPin } from "react-icons/md";
 
 export default function Hero() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("bs9882074@gmail.com").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // reset after 2 s
+    });
+  };
+
   return (
     <section id="hero" className="hero animate-in">
-      {/* Avatar */}
-      <div >
+      {/* Avatar — vertically centered relative to all info */}
+      <div className="hero-img-wrap">
         <Image
-          src="/img5.jpg"
+          src="img5.jpg"
           alt="Ayush Sharma"
           width={160}
           height={160}
           className="hero-avatar"
           priority
+          unoptimized
         />
       </div>
 
@@ -29,7 +43,10 @@ export default function Hero() {
         <p className="hero-tagline">A developer who knows how to code properly.</p>
 
         <p className="hero-bio">
-          Grown up kid trying to build cool things on the internet. But for now, just trying to operate my own life. I love my relationship with semicolons and arduino. And of course I have got a growing collection of half-finished side projects.
+          Grown up kid trying to build cool things on the internet. But for
+          now, just trying to operate my own life. I love my relationship with
+          semicolons and arduino. And of course I have got a growing collection
+          of half-finished side projects.
         </p>
 
         <div className="hero-location">
@@ -38,15 +55,25 @@ export default function Hero() {
         </div>
 
         <div className="hero-actions">
-          <a
+          {/* Mail + copy side by side */}
+          {/* <a
             id="hero-email"
             href="mailto:bs9882074@gmail.com"
-            className="icon-btn font-sans"
+            className="icon-btn"
             aria-label="Send email"
             title="bs9882074@gmail.com"
           >
             <FaEnvelope size={15} />
-          </a>
+          </a> */}
+
+          <button
+            onClick={copyEmail}
+            className={`icon-btn copy-btn ${copied ? "copied" : ""}`}
+            aria-label="Copy email address"
+            title={copied ? "Copied!" : "Copy email"}
+          >
+            {copied ? <FaCheck size={13} /> : <IoCopyOutline size={15} />}
+          </button>
 
           <a
             id="hero-github"
@@ -83,10 +110,6 @@ export default function Hero() {
           >
             <FaTwitter size={15} />
           </a>
-
-          {/* <a href="#blogs" className="blog-link-btn" id="hero-blog-link">
-            📝 Blog
-          </a> */}
         </div>
       </div>
     </section>

@@ -47,7 +47,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="footer-text" style={{ marginTop: "0.75rem" }}>
-          © {year} Ayush Kumar Sharma. Built with Next.js &amp; ☕
+          © {year} Ayush Kumar Sharma. Built with Next.js.
         </p>
         <p className="footer-text" style={{ marginTop: "0.25rem" }}>
           bs9882074@gmail.com &nbsp;·&nbsp;{" "}
