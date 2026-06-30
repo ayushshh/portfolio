@@ -999,38 +999,77 @@ body {
   font-style: italic;
 }
 
-/* Footer */
-.footer {
+/* Footer - Get in Touch */
+.get-in-touch {
+  position: relative;
   border-top: 1px solid var(--border);
-  padding: 2rem 1.5rem;
+  padding: 6rem 1.5rem;
   text-align: center;
+  overflow: hidden;
+  background: var(--bg-card-hover);
 }
 
-.footer-inner {
-  max-width: 780px;
+.footer-bg-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.95;
+  transition: filter 0.3s ease;
+  mix-blend-mode: multiply;
+}
+
+[data-theme="dark"] .footer-bg-container {
+  filter: invert(1);
+  mix-blend-mode: screen;
+  opacity: 0.15; /* subtle visibility in dark mode */
+}
+
+.footer-tree-img {
+  max-width: 420px;
+  height: auto;
+  display: block;
+}
+
+.get-in-touch-content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
   margin: 0 auto;
 }
 
-.footer-text {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+.get-in-touch-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
 }
 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 0.75rem;
+.get-in-touch-content p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
-.footer-link {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+.view-more-button {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
 }
 
-.footer-link:hover {
+.view-more-button:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
   color: var(--text-primary);
 }
 
@@ -1119,77 +1158,4 @@ body {
 .scroll-animate.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Animated Floating Background Assets (Fire & Skull) */
-.bg-floating-assets {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.floating-asset {
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.08; /* subtle but clearly visible */
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-/* Slightly more visible in dark theme */
-[data-theme="dark"] .floating-asset {
-  opacity: 0.12;
-}
-
-.asset-fire {
-  top: 15%;
-  right: -50px;
-  width: 280px;
-  height: 420px;
-  background-image: url('/img1.webp');
-  animation: floatSlowly 24s ease-in-out infinite alternate;
-  mix-blend-mode: multiply;
-}
-
-.asset-skull {
-  bottom: 12%;
-  left: -50px;
-  width: 250px;
-  height: 250px;
-  background-image: url('/img3.jpg');
-  animation: floatAndRotateSlowly 28s ease-in-out infinite alternate;
-  mix-blend-mode: multiply;
-}
-
-/* Theming & color adjustments for blend modes to keep them clean */
-[data-theme="dark"] .asset-fire {
-  filter: invert(1) hue-rotate(180deg) saturate(1.5) contrast(1.2);
-  mix-blend-mode: screen;
-}
-
-[data-theme="dark"] .asset-skull {
-  filter: invert(1);
-  mix-blend-mode: screen;
-}
-
-@keyframes floatSlowly {
-  0% {
-    transform: translateY(0) translateX(0) scale(1);
-  }
-  100% {
-    transform: translateY(-30px) translateX(-15px) scale(1.08);
-  }
-}
-
-@keyframes floatAndRotateSlowly {
-  0% {
-    transform: translateY(0) rotate(-6deg) scale(1);
-  }
-  100% {
-    transform: translateY(30px) rotate(6deg) scale(1.08);
-  }
 }
