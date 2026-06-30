@@ -9,22 +9,23 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ayush Sharma — Full Stack Developer",
+  title: "Ayush Portfolio",
+  icons: {
+    icon: "/img1.webp",
+    shortcut: "/img1.webp",
+    apple: "/img1.webp"
+  },
   description:
-    "Portfolio of Ayush, a passionate Full Stack Developer & cloud technologies.",
+    "Portfolio of Ayush, a passionate Developer.",
   keywords: [
-    "Ayush Sharma",
-    "Full Stack Developer",
-    "MERN Stack",
-    "Next.js",
-    "TypeScript",
+    "Developer",
     "Portfolio",
   ],
   authors: [{ name: "Ayush Kumar Sharma" }],
   openGraph: {
-    title: "Ayush Kumar Sharma — Full Stack Developer",
+    title: "Ayush's Portfolio",
     description:
-      "Portfolio of Ayush Kumar Sharma, a passionate Full Stack Developer.",
+      "A developer portfolio.",
     type: "website",
   },
 };

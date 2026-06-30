@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <Image
-              src="/img4.jpg"
+              src="/img5.jpg"
               alt="Ayush Sharma Cartoon"
               width={160}
               height={160}
@@ -39,7 +39,7 @@ export default function Hero() {
           </div>
           <div className="flip-card-back">
             <Image
-              src="/img5.jpg"
+              src="/img4.jpg"
               alt="Ayush Sharma Real"
               width={160}
               height={160}
