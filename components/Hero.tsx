@@ -24,17 +24,30 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero animate-in">
-      {/* Avatar — vertically centered relative to all info */}
-      <div className="hero-img-wrap">
-        <Image
-          src="img5.jpg"
-          alt="Ayush Sharma"
-          width={160}
-          height={160}
-          className="hero-avatar"
-          priority
-          unoptimized
-        />
+      {/* 3D Flip Avatar — cartoon luffy on front, real photo on back */}
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <Image
+              src="/img4.jpg"
+              alt="Ayush Sharma Cartoon"
+              width={160}
+              height={160}
+              className="hero-avatar"
+              priority
+            />
+          </div>
+          <div className="flip-card-back">
+            <Image
+              src="/img5.jpg"
+              alt="Ayush Sharma Real"
+              width={160}
+              height={160}
+              className="hero-avatar"
+              priority
+            />
+          </div>
+        </div>
       </div>
 
       {/* Info */}

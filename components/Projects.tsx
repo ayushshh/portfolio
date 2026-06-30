@@ -49,13 +49,11 @@ export default function Projects() {
         {/* Overlay card */}
         <div className="unavailable-overlay">
           <div className="unavailable-card">
-            <div className="unavailable-title">Temporarily Unavailable :(</div>
+            <h3 className="unavailable-title">Temporarily Unavailable :(</h3>
             <p className="unavailable-desc">
-              Recently Jeffry&apos;s AWS charged me $100 gonna migrate
-              all my projects to different cloud provider
-            </p>
-            <p className="unavailable-note">
-              Live links will be coming soon!
+              Recently Jeffry&apos;s AWS charged me $100 gonna migrate all my projects to different cloud provider.
+              <br /><br />
+              <strong>Live links will be coming soon!</strong>
             </p>
           </div>
         </div>
