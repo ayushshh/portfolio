@@ -12,6 +12,12 @@ import AnimatedSection from "@/components/AnimatedSection";
 export default function Home() {
   return (
     <div className="page-wrapper">
+      {/* Subtle animated floating background illustrations */}
+      <div className="bg-floating-assets">
+        <div className="floating-asset asset-fire" />
+        <div className="floating-asset asset-skull" />
+      </div>
+
       <main className="main-content">
         {/* Hero displays instantly on mount */}
         <Hero />

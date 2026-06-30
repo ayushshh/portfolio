@@ -1120,3 +1120,76 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Animated Floating Background Assets (Fire & Skull) */
+.bg-floating-assets {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-asset {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.08; /* subtle but clearly visible */
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Slightly more visible in dark theme */
+[data-theme="dark"] .floating-asset {
+  opacity: 0.12;
+}
+
+.asset-fire {
+  top: 15%;
+  right: -50px;
+  width: 280px;
+  height: 420px;
+  background-image: url('/img1.webp');
+  animation: floatSlowly 24s ease-in-out infinite alternate;
+  mix-blend-mode: multiply;
+}
+
+.asset-skull {
+  bottom: 12%;
+  left: -50px;
+  width: 250px;
+  height: 250px;
+  background-image: url('/img3.jpg');
+  animation: floatAndRotateSlowly 28s ease-in-out infinite alternate;
+  mix-blend-mode: multiply;
+}
+
+/* Theming & color adjustments for blend modes to keep them clean */
+[data-theme="dark"] .asset-fire {
+  filter: invert(1) hue-rotate(180deg) saturate(1.5) contrast(1.2);
+  mix-blend-mode: screen;
+}
+
+[data-theme="dark"] .asset-skull {
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+
+@keyframes floatSlowly {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  100% {
+    transform: translateY(-30px) translateX(-15px) scale(1.08);
+  }
+}
+
+@keyframes floatAndRotateSlowly {
+  0% {
+    transform: translateY(0) rotate(-6deg) scale(1);
+  }
+  100% {
+    transform: translateY(30px) rotate(6deg) scale(1.08);
+  }
+}
